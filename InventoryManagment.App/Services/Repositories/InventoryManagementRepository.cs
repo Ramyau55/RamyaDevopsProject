@@ -2,15 +2,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using InventoryManagement.UI.Models;
-using InventoryManagment.UI.Data;
-using InventoryManagment.UI.Data.Entities;
-using InventoryManagment.UI.Services.Interfaces;
+using InventoryManagement.App.Models;
+using InventoryManagment.App.Data;
+using InventoryManagment.App.Data.Entities;
+using InventoryManagment.App.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using X.PagedList;
 
-namespace InventoryManagement.UI.Services.Repositories
+namespace InventoryManagement.App.Services.Repositories
 {
     public class InventoryManagementRepository : IStoreManagementRepository
     {
@@ -56,7 +56,7 @@ namespace InventoryManagement.UI.Services.Repositories
 
         public async Task<InventoryItemViewModel> GetInventoryItem(string inventoryId)
         {
-            return await _dbContext.InventoryItems.Where(q => q.Id == inventoryId).Select(q => new InventoryItemViewModel
+            return await _dbContext.InventoryItems.Select(q => new InventoryItemViewModel
             {
                 Id = q.Id,
                 Name = q.Name,

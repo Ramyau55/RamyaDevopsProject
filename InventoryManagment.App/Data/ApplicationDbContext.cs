@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using InventoryManagment.UI.Data.Entities;
+using InventoryManagment.App.Data.Entities;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace InventoryManagment.UI.Data
+namespace InventoryManagment.App.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {

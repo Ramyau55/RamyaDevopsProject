@@ -1,4 +1,4 @@
-@model InventoryManagement.UI.Models.InventoryItemViewModel
+@model InventoryManagement.App.Models.InventoryItemViewModel
 
 @{
     ViewData["Title"] = "Delete";
@@ -10,7 +10,7 @@
 <div>
     <hr />
     <div class="row">
-        <form asp-action="Delete" enctype="multipart/form-data" class="form-horizontal" asp-antiforgery="true">
+        <form asp-action="Delete" class="form-horizontal">
             <dl class="row align-items-center">
                 <dt class="col-sm-4">
                     @Html.DisplayNameFor(model => model.Name)

@@ -1,17 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using InventoryManagement.UI.Common;
-using InventoryManagement.UI.Models;
-using InventoryManagment.UI.Services.Interfaces;
+using InventoryManagement.App.Models;
+using InventoryManagment.App.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
 
-namespace InventoryManagement.UI.Controllers
+namespace InventoryManagement.App.Controllers
 {
     [Authorize]
     public class InventoryController : Controller
@@ -38,8 +33,6 @@ namespace InventoryManagement.UI.Controllers
         {
             var inventoryItem = new InventoryItemViewModel {};
 
-            ViewData["ItemTypes"] = GetItemTypes();
-
             return View(inventoryItem);
         }
 
@@ -55,8 +48,6 @@ namespace InventoryManagement.UI.Controllers
 
                 return RedirectToAction(nameof(Index));
             }
-
-            ViewData["ItemTypes"] = GetItemTypes();
 
             return View(model);
         }
@@ -92,24 +83,20 @@ namespace InventoryManagement.UI.Controllers
                 return NotFound();
             }
 
-            ViewData["ItemTypes"] = GetItemTypes();
-
             return View(inventoryItem);
         }
 
-        [HttpPost]
+        [HttpPut]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Edit(string id, InventoryItemViewModel model)
         {
             if (ModelState.IsValid)
             {
-                model.CreatedBy = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
                 await _inventoryRepo.UpdateInventoryItem(id, model);
 
                 return RedirectToAction(nameof(Index));
             }
-
-            ViewData["ItemTypes"] = GetItemTypes();
 
             return View(model);
         }
@@ -138,15 +125,6 @@ namespace InventoryManagement.UI.Controllers
             await _inventoryRepo.DeleteInventoryItem(id);
 
             return RedirectToAction(nameof(Index));
-        }
-
-        public IEnumerable<SelectListItem> GetItemTypes()
-        {
-            return Enum.GetNames(typeof(ItemTypeEnum)).Cast<string>().Select(item => new SelectListItem
-            {
-                Value = item,
-                Text = item
-            });
         }
 
     }

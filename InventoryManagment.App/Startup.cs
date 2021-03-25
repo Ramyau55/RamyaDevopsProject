@@ -8,13 +8,13 @@ using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
-using InventoryManagment.UI.Data;
+using InventoryManagment.App.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using InventoryManagement.UI.Services;
+using InventoryManagement.App.Services;
 
-namespace InventoryManagment.UI
+namespace InventoryManagment.App
 {
     public class Startup
     {

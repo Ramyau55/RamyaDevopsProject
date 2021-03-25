@@ -1,8 +1,8 @@
-using InventoryManagement.UI.Services.Repositories;
-using InventoryManagment.UI.Services.Interfaces;
+using InventoryManagement.App.Services.Repositories;
+using InventoryManagment.App.Services.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace InventoryManagement.UI.Services
+namespace InventoryManagement.App.Services
 {
     public static class Bootstrapper
     {

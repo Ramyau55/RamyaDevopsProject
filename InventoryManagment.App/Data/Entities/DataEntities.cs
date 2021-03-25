@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Identity;
 
-namespace InventoryManagment.UI.Data.Entities
+namespace InventoryManagment.App.Data.Entities
 {
     public class ApplicationUser : IdentityUser
     {

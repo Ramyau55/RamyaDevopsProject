@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using InventoryManagement.UI.Models;
+using InventoryManagement.App.Models;
 
-namespace InventoryManagment.UI.Services.Interfaces
+namespace InventoryManagment.App.Services.Interfaces
 {
     public interface IStoreManagementRepository
     {

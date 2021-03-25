@@ -1,4 +1,4 @@
-@model InventoryManagement.UI.Models.InventoryItemViewModel
+@model InventoryManagement.App.Models.InventoryItemViewModel
 
 @{
     ViewData["Title"] = "Create";
@@ -20,9 +20,7 @@
         <div class="form-group">
             <label asp-for="ItemType" class="col-md-2"></label>
             <div class="col-md-6">
-                <select asp-items="ViewBag.ItemTypes" asp-for="ItemType" class="form-control">
-                    <option value="">Select Item Type</option>
-                </select>
+                <input type="text" class="form-control" asp-for="ItemType">
                 <span asp-validation-for="ItemType"></span>
             </div>
         </div>

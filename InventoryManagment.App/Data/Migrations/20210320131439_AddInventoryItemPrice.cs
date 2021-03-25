@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace InventoryManagment.UI.Data.Migrations
+namespace InventoryManagment.App.Data.Migrations
 {
     public partial class AddInventoryItemPrice : Migration
     {
